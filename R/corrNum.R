@@ -9,7 +9,7 @@
 
 corrNum <- function(season) {
   data <- select_if(nba, is.numeric)
-  data <- data[data$Year == season, ]
+  data <- data[data$year == season, ]
   cor_data <- cor(data, use="pairwise.complete.obs")
   corrplot(cor_data, type = "upper")
 }

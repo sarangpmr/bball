@@ -8,12 +8,12 @@
 #' lebronPPG()
 
 lebronPPG <- function(season) {
-  nba$PPG <- (nba$PTS / nba$G)
+  nba$PPG <- (nba$pta / nba$g)
   if(season >= 2004 && season <= 2017) {
     nba %>%
-      group_by(Player) %>%
-      select(Year, G, PTS, PPG) %>%
-      filter(Player == "LeBron James" & Year == season)
+      group_by(player) %>%
+      select(year, g, pts, ppg) %>%
+      filter(player == "LeBron James" & year == season)
   }
   else {
     print("Error: LeBron did not play in this season! Please try a season between 2004 and 2017.")

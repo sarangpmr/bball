@@ -9,9 +9,9 @@
 
 oldestPlayer <- function(season) {
   nba %>%
-    group_by(Year) %>%
-    select(Year, Player, Age) %>%
-    filter(Age == max(Age) & Year == season) %>%
-    arrange(Player) %>%
+    group_by(year) %>%
+    select(year, player, age) %>%
+    filter(age == max(age) & year == season) %>%
+    arrange(player) %>%
     slice(1)
 }
