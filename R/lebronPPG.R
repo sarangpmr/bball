@@ -8,7 +8,7 @@
 #' lebronPPG()
 
 lebronPPG <- function(season) {
-  nba$PPG <- (nba$pta / nba$g)
+  nba$ppg <- (nba$pts / nba$g)
   if(season >= 2004 && season <= 2017) {
     nba %>%
       group_by(player) %>%
